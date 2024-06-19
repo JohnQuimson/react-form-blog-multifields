@@ -1,6 +1,6 @@
 <h1 align="center">
   
- Template REACT
+ react-form-blog-multifields
   
 </h1>
 
@@ -26,9 +26,24 @@
   <a href="#used-technologies">Used technologies</a> 
 </p>
 
-![Blog Image](src/assets/blog.png)
+<!-- ![Blog Image](src/assets/blog.png) -->
 
 ## Description
+
+Ampliare l'esercizio precedente aggiungendo, nel form, i campi per:
+
+- immagine
+- contenuto
+- categoria (select)
+- tags (lista di checkbox)
+- uno stato per pubblicare o meno l'articolo.
+
+Utilizzare un unico oggetto per gestire tutti i dati del form.
+
+### BONUS:
+
+- Aggiungere uno useEffect che mostri un alert quando l’utente clicca sull’apposita checkbox per pubblicare un articolo.
+- Fare sì che ogni 5 secondi lo sfondo cambi da bianco a nero e viceversa
 
 ## How To Use
 
@@ -52,8 +67,8 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 This software uses the following technologies:
 
-- [Node.js](https://)
-- [Express](https://)
+- [React](https://)
+<!-- - [Express](https://) -->
 
 > GitHub [@JohnQuimson](https://github.com/JohnQuimson) &nbsp;&middot;&nbsp;
 > Twitter [@John Henric Quimson](https://www.linkedin.com/in/john-henric-quimson-973827280/)
