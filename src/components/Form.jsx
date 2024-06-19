@@ -29,7 +29,7 @@ const Form = () => {
     title: '',
     content: '',
     image: '',
-    category: '', // Aggiunto campo categoria
+    category: '',
     tags: [],
     status: false,
   };

@@ -40,7 +40,7 @@ const Article = ({ title, content, imageUrl, category, tags, status }) => {
         </>
       ) : (
         <div className="article">
-          <h4>Article is hidden</h4>
+          <h4>Articolo non visibile</h4>
         </div>
       )}
     </>
