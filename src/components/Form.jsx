@@ -15,13 +15,21 @@ const Form = () => {
     'Salute',
   ];
 
+  const listCategories = [
+    'Tecnologia',
+    'Sport',
+    'Salute',
+    'Cucina ',
+    'Finanza ',
+  ];
+
   const [articles, setArticles] = useState([]);
 
   const initialData = {
     title: '',
     content: '',
     image: '',
-    category: '',
+    category: '', // Aggiunto campo categoria
     tags: [],
     status: false,
   };
@@ -48,6 +56,7 @@ const Form = () => {
     <>
       <section id="form-section">
         <form onSubmit={handleSubmit}>
+          <h2>Form</h2>
           {Object.keys(initialData).map((title, index) => {
             const value = initialData[title];
             switch (typeof value) {
@@ -67,7 +76,7 @@ const Form = () => {
               case 'object':
                 return (
                   <div key={`formElement${index}`}>
-                    <p>tags:</p>
+                    <strong>Tags:</strong>
                     <ul>
                       {listTags.map((title, index) => (
                         <li key={`tags${index}`}>
@@ -92,6 +101,24 @@ const Form = () => {
                 );
 
               default:
+                if (title === 'category') {
+                  return (
+                    <select
+                      key={`formElement${index}`}
+                      name={title}
+                      value={formData[title]}
+                      onChange={(e) => handleField(title, e.target.value)}
+                    >
+                      <option value="">Seleziona categoria</option>
+                      {listCategories.map((c, index) => (
+                        <option key={index} value={c}>
+                          {c}
+                        </option>
+                      ))}
+                    </select>
+                  );
+                }
+
                 return (
                   <input
                     key={`formElement${index}`}
@@ -112,59 +139,27 @@ const Form = () => {
             }
           })}
 
-          {/* <div className="input-container">
-            <input
-              type="text"
-              placeholder="Inserisci un articolo"
-              value={articleTitle}
-              onChange={(e) => setArticleTitle(e.target.value)}
-            />
-            {articleTitle && (
-              <button
-                type="button"
-                onClick={handleDeleteInput}
-                className="clear-button"
-              >
-                x
-              </button>
-            )}
-          </div> */}
           <button>invia</button>
         </form>
 
-        {articles.length > 0 && <h3 className="subtitle">Articoli:</h3>}
-
         <div className="articles">
+          <h2 className="articlesTitle">Articoli</h2>
+          {articles.length > 0 || (
+            <h3 className="subtitle">Al momento non ci sono articoli</h3>
+          )}
+
           {articles.map((a, index) => (
             <Article
               key={`article${index}`}
               title={a.title}
               content={a.content}
-              imageUrl={a.imageUrl}
+              imageUrl={a.image}
               category={a.category}
               tags={a.tags}
               status={a.status}
             />
           ))}
         </div>
-
-        {/* <ul>
-          {articles.map((article, index) => (
-            <li key={`article${index}`}>
-              <span>{article}</span>
-              <div className="cont-icons">
-                <FaRegEdit
-                  className="editIcon"
-                  onClick={() => handleEdit(index)}
-                />
-                <MdDeleteForever
-                  className="deleteIcon"
-                  onClick={() => removeArticle(index)}
-                />
-              </div>
-            </li>
-          ))}
-        </ul> */}
       </section>
     </>
   );

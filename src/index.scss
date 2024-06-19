@@ -1,196 +1,160 @@
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-// }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-// header {
-//   background: rgba(255, 255, 255, 0.2);
-//   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-//   backdrop-filter: blur(5px);
-//   -webkit-backdrop-filter: blur(5px);
-//   height: 10vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   color: white;
-//   text-transform: uppercase;
-// }
+ul {
+  list-style-type: none;
+}
 
-// main {
-//   background: rgb(0, 0, 0);
-//   background: linear-gradient(
-//     143deg,
-//     rgba(0, 0, 0, 1) 0%,
-//     rgba(39, 34, 64, 1) 57%,
-//     rgba(29, 19, 77, 1) 89%
-//   );
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
+header {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  text-transform: uppercase;
+}
 
-//   #form-section {
-//     margin-top: 20vh;
-//     background: rgba(255, 255, 255, 0.2);
-//     border-radius: 16px;
-//     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-//     backdrop-filter: blur(5px);
-//     -webkit-backdrop-filter: blur(5px);
-//     border: 1px solid rgba(255, 255, 255, 0.3);
-//     padding: 20px 50px;
+main {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    143deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(39, 34, 64, 1) 57%,
+    rgba(29, 19, 77, 1) 89%
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: row; /* Imposta il layout principale in riga */
+  align-items: flex-start; /* Allinea gli elementi in alto */
 
-//     form {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       margin-bottom: 20px;
-//       padding: 10px;
-//       border-radius: 8px;
+  #form-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    width: 80%;
+    margin: 15vh auto;
+    gap: 20px;
+    overflow: hidden;
 
-//       .input-container {
-//         position: relative;
-//         width: 100%;
-//       }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 50%;
 
-//       input {
-//         width: 100%;
-//         max-width: 300px;
-//         padding: 10px;
-//         padding-right: 30px;
-//         border: 1px solid #ddd;
-//         border-radius: 4px;
-//         font-size: 16px;
-//         transition: border-color 0.3s ease;
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-//         &:focus {
-//           border-color: #007bff;
-//           outline: none;
-//         }
-//       }
+      label {
+        display: flex;
+        align-items: center;
+      }
 
-//       .clear-button {
-//         position: absolute;
-//         right: 10px;
-//         top: 50%;
-//         transform: translateY(-50%);
-//         background: none;
-//         border: none;
-//         font-size: 18px;
-//         cursor: pointer;
-//         color: #999;
-//       }
+      input[type='text'],
+      input[type='number'],
+      select {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-//       .cont-btn {
-//         display: flex;
-//         gap: 10px;
-//         margin-left: 10px;
-//         .addBtn {
-//           padding: 10px 15px;
-//           background-color: #007bff;
-//           color: white;
-//           border: none;
-//           border-radius: 50%;
-//           font-size: 16px;
-//           transition: background-color 0.3s ease;
+      input[type='checkbox'] {
+        margin-right: 5px;
+      }
 
-//           &:hover {
-//             background-color: #0056b3;
-//             cursor: pointer;
-//           }
-//         }
+      button {
+        padding: 10px 30px;
+        font-size: 18px;
+        background-color: #4c00ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: center;
 
-//         .editBtn {
-//           padding: 10px 15px;
-//           background-color: rgb(219, 186, 40);
-//           color: white;
-//           border: none;
-//           border-radius: 10px;
-//           font-size: 16px;
-//           transition: background-color 0.3s ease;
+        &:hover {
+          background-color: transparent;
+          border: 2px solid #4c00ff;
+          color: #4c00ff;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
 
-//           &:hover {
-//             background-color: rgb(138, 126, 20);
-//             cursor: pointer;
-//           }
-//         }
+  .articles {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    height: calc(100vh - 40vh);
 
-//         .cancelBtn {
-//           padding: 10px 15px;
-//           background-color: rgb(151, 151, 151);
-//           color: white;
-//           border: none;
-//           border-radius: 10px;
-//           font-size: 16px;
-//           transition: background-color 0.3s ease;
+    .articlesTitle {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-//           &:hover {
-//             background-color: rgb(97, 97, 97);
-//             cursor: pointer;
-//           }
-//         }
-//       }
-//     }
+    .subtitle {
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+    }
 
-//     .subtitle {
-//       font-size: 24px;
-//       color: white;
-//     }
+    .article {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      margin-bottom: 20px;
 
-//     ul {
-//       margin-top: 10px;
-//       list-style-type: none;
-//       display: flex;
-//       flex-direction: column;
-//       gap: 10px;
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
 
-//       li {
-//         line-height: 40px;
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         border: 1px solid rgba(255, 255, 255, 0.3);
-//         padding: 0 10px;
-//         border-radius: 10px;
+      ul {
+        margin-top: 5px;
+        padding-left: 20px;
+      }
 
-//         span {
-//           font-size: 20px;
-//           color: rgb(211, 211, 211);
-//           width: 70%;
-//           max-width: 200px;
-//           overflow-x: hidden;
-//           text-overflow: ellipsis;
-//         }
+      .card-image {
+        margin-top: 10px;
 
-//         .cont-icons {
-//           display: flex;
-//           gap: 20px;
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
+        }
+      }
 
-//           .deleteIcon {
-//             color: rgb(202, 31, 31);
-//             font-size: 24px;
+      &.hidden {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
 
-//             &:hover {
-//               color: rgb(139, 25, 25);
-//               cursor: pointer;
-//             }
-//           }
-
-//           .editIcon {
-//             color: rgb(219, 186, 40);
-//             font-size: 22px;
-
-//             &:hover {
-//               color: rgb(138, 126, 20);
-//               cursor: pointer;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+  h4 {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #777;
+  }
+}
