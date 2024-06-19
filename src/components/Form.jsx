@@ -31,7 +31,7 @@ const Form = () => {
     image: '',
     category: '',
     tags: [],
-    status: false,
+    status: true,
   };
 
   const [formData, setFormData] = useState(initialData);
@@ -63,7 +63,7 @@ const Form = () => {
               case 'boolean':
                 return (
                   <label key={`formElement${index}`}>
-                    {title}
+                    Visibile
                     <input
                       name={title}
                       type="checkbox"
